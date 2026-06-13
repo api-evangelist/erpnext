@@ -1,0 +1,15 @@
+{
+  "data": {
+    "name": "CUST-00001",
+    "doctype": "Customer",
+    "owner": "Administrator",
+    "creation": "2024-01-15T10:30:00.000000",
+    "modified": "2024-03-20T14:45:00.000000",
+    "modified_by": "Administrator",
+    "docstatus": 0,
+    "customer_name": "Acme Corp",
+    "customer_group": "Commercial",
+    "territory": "United States",
+    "customer_type": "Company"
+  }
+}

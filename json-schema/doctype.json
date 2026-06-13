@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/erpnext/main/json-schema/doctype.json",
+  "title": "DocType",
+  "description": "A Frappe/ERPNext DocType document, the base object returned by all resource endpoints.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique identifier (primary key) of the document."
+    },
+    "doctype": {
+      "type": "string",
+      "description": "The DocType name, e.g. Customer, Employee, Sales Invoice."
+    },
+    "owner": {
+      "type": "string",
+      "description": "The user who created the document."
+    },
+    "creation": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the document was created."
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the last modification."
+    },
+    "modified_by": {
+      "type": "string",
+      "description": "The user who last modified the document."
+    },
+    "docstatus": {
+      "type": "integer",
+      "enum": [0, 1, 2],
+      "description": "Document workflow status: 0=Draft, 1=Submitted, 2=Cancelled."
+    }
+  },
+  "required": ["name", "doctype"]
+}

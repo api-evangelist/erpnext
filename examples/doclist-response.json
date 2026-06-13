@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "name": "CUST-00001",
+      "doctype": "Customer",
+      "owner": "Administrator",
+      "creation": "2024-01-15T10:30:00.000000",
+      "modified": "2024-03-20T14:45:00.000000",
+      "modified_by": "Administrator",
+      "docstatus": 0
+    },
+    {
+      "name": "CUST-00002",
+      "doctype": "Customer",
+      "owner": "Administrator",
+      "creation": "2024-02-01T09:00:00.000000",
+      "modified": "2024-02-01T09:00:00.000000",
+      "modified_by": "Administrator",
+      "docstatus": 0
+    }
+  ]
+}

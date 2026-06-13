@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/erpnext/main/json-schema/doclist.json",
+  "title": "DocList",
+  "description": "A paginated list of Frappe/ERPNext documents returned by the GET /resource/{DocType} endpoint.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "Array of documents matching the query.",
+      "items": {
+        "$ref": "doctype.json"
+      }
+    }
+  },
+  "required": ["data"]
+}

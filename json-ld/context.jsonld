@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "erpnext": "https://erpnext.com/vocab/",
+    "frappe": "https://frappe.io/vocab/",
+    "aid": "https://apis.io/vocab/aid",
+    "name": "@id",
+    "doctype": "frappe:doctype",
+    "owner": {
+      "@id": "schema:creator",
+      "@type": "@id"
+    },
+    "creation": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "modified_by": {
+      "@id": "schema:editor",
+      "@type": "@id"
+    },
+    "docstatus": "frappe:documentStatus",
+    "Customer": "schema:Organization",
+    "Employee": "schema:Person",
+    "SalesInvoice": "schema:Invoice",
+    "PurchaseInvoice": "schema:Invoice",
+    "Supplier": "schema:Organization",
+    "Lead": "schema:Person",
+    "Company": "schema:Organization"
+  }
+}
