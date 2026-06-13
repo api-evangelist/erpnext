@@ -1,0 +1,29 @@
+name: ERPNext Rate Limits
+description: ERPNext (via Frappe Framework) does not publish explicit API rate limits in its official documentation. Rate limiting behavior depends on the hosting environment and server configuration. Self-hosted instances have no enforced API rate limits by default.
+url: https://docs.frappe.io/framework/user/en/api/rest
+documented: false
+notes:
+  - No official rate limit documentation is published for the Frappe REST API
+  - Rate limiting is not enforced by default in self-hosted ERPNext installations
+  - Frappe Cloud hosting may apply infrastructure-level throttling based on plan resources
+  - CPU time and resource quotas on Frappe Cloud shared hosting (Sites plan) indirectly limit throughput
+  - The default list endpoint returns 20 records; use limit_page_length to paginate
+  - Server resource limits on shared hosting plans may constrain heavy API workloads
+resourceQuotas:
+  - plan: Sites (Shared Hosting)
+    cpuTime: 0.5 hours/day (approximate)
+    database: 0.2 GB
+    storage: 2 GB
+    description: Shared hosting resource quotas indirectly limit API throughput
+pagination:
+  defaultPageSize: 20
+  maxPageSize: Not documented; configurable via limit_page_length parameter
+  parameters:
+    - limit_start
+    - limit_page_length
+    - limit (alias, v13+)
+recommendations:
+  - Implement client-side retry logic with exponential backoff
+  - Use pagination parameters to avoid large result sets
+  - Monitor server resource utilization via Frappe Cloud dashboard
+  - For high-volume integrations, use dedicated or private bench hosting

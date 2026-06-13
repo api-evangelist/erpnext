@@ -1,0 +1,57 @@
+name: ERPNext Plans and Pricing
+description: ERPNext is free and open-source software (AGPL-3.0). Hosting is available through Frappe Cloud with several tiers. The software itself has no per-user fees, no module charges, and no feature paywalls.
+url: https://frappe.io/erpnext/pricing
+selfHosted:
+  cost: Free
+  description: Download and self-host ERPNext at no cost. Requires own infrastructure, setup, and maintenance.
+  license: AGPL-3.0
+plans:
+  - name: Sites (Shared Hosting)
+    cost: $5/month onwards
+    costInr: "410/month onwards"
+    description: Single site on shared servers with managed upgrades and backups. Lowest entry cost option for small businesses.
+    features:
+      - Single site
+      - Managed upgrades and backups
+      - Lowest entry cost
+      - Scripting and custom apps
+      - Product Warranty
+      - Hosting on shared servers
+      - SSL included
+      - Multi-region availability
+      - No user limit
+      - No per-module fees
+      - Automated backups
+  - name: Servers (Standard)
+    cost: $20/month onwards
+    costInr: "1800/month onwards"
+    description: Shared or dedicated instances with unified or separate App and DB configurations.
+    features:
+      - Shared or Dedicated instances
+      - Unified or Separate App and DB
+      - Best price-performance ratio
+      - Limited uptime guarantees
+      - Only incident support
+  - name: Premium Servers
+    cost: $125/month onwards
+    costInr: "5400/month onwards"
+    description: Superior dedicated server isolation with advanced features and stronger reliability guarantees.
+    features:
+      - Superior Dedicated Server isolation
+      - Advanced features like server snapshots
+      - Autoscaling
+      - Stronger reliability guarantees
+      - Global data centre locations
+      - Product Warranty included
+trial:
+  available: true
+  duration: 14 days
+  description: 14-day free trial on Frappe Cloud
+discounts:
+  - Educational institutions
+  - Nonprofits
+notes:
+  - ERPNext software itself is always free and open-source
+  - No API-specific pricing tiers
+  - Product Warranty covers bug fixes and support tickets
+  - 200+ certified implementation partners available

@@ -1,0 +1,42 @@
+name: ERPNext FinOps
+description: Financial operations guidance for ERPNext API integrations. ERPNext is open-source with no per-call API fees. Costs arise from hosting (Frappe Cloud or self-hosted infrastructure) and optional implementation partner services.
+url: https://frappe.io/erpnext/pricing
+costModel: Infrastructure-based (no per-API-call fees)
+apiCosts:
+  perCall: $0
+  perRequest: $0
+  description: ERPNext REST API has no per-call or per-request fees. All API usage is included with the hosting plan or free in self-hosted deployments.
+hostingCosts:
+  - tier: Self-Hosted
+    monthlyCost: $0 (software)
+    notes: Infrastructure costs depend on chosen cloud provider or on-premise hardware
+  - tier: Frappe Cloud Sites
+    monthlyCostUSD: 5
+    monthlyCostINR: 410
+    notes: Shared hosting entry tier; resource quotas may limit heavy API workloads
+  - tier: Frappe Cloud Servers
+    monthlyCostUSD: 20
+    monthlyCostINR: 1800
+    notes: Better performance for API-heavy integrations
+  - tier: Frappe Cloud Premium Servers
+    monthlyCostUSD: 125
+    monthlyCostINR: 5400
+    notes: Dedicated resources, autoscaling, best for production API workloads
+implementationCosts:
+  diy: $0
+  partnerAssisted: $2000 to $8000 per integration (typical range)
+  fullImplementation: Variable; contact certified partner
+  notes: 200+ certified Frappe/ERPNext partners globally
+optimizationTips:
+  - Use pagination (limit_page_length) to reduce per-request data volume
+  - Cache frequently-read DocType data client-side to reduce API call frequency
+  - Use field filtering (fields parameter) to request only needed columns
+  - Batch updates using PUT operations rather than multiple individual calls
+  - For self-hosted, scale infrastructure horizontally during peak API load
+  - Start with Frappe Cloud Sites plan and upgrade based on actual usage metrics
+  - Use 14-day free trial to benchmark API performance before committing to a plan
+discounts:
+  - Educational institutions qualify for special pricing
+  - Nonprofits qualify for special pricing
+  - Contact Frappe sales for volume or multi-site arrangements
+licenseNote: ERPNext is AGPL-3.0 licensed. Self-hosting is always free. Commercial support and hosting are optional paid services.
