@@ -1,7 +1,7 @@
 aid: erpnext
 name: ERPNext
 description: ERPNext is a free and open-source enterprise resource planning (ERP) platform built on the Frappe Framework. It provides a comprehensive REST API for managing accounting, inventory, manufacturing, sales, purchase, HR, and CRM modules. The Frappe Framework auto-generates RESTful endpoints for all DocTypes, supporting standard HTTP methods with JSON responses, token-based authentication, OAuth2, and flexible filtering and pagination.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/erpnext/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
