@@ -1,0 +1,41 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yaml
+summary:
+  types:
+  - apiKey
+  - http
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: tokenAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: |-
+    Get your API keys at User -> Api Access -> Generate Keys.
+    "headers = {'Authorization': 'token <api_key>:<api_secret>'}"
+  sources:
+  - openapi/openapi.yaml
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: |-
+    Get your API keys at User -> Api Access -> Generate Keys.
+    username = api_key; password = api_secret
+    [More info](https://frappe.io/docs/user/en/guides/integration/token_based_auth)
+  sources:
+  - openapi/openapi.yaml
+- name: oAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: /method/frappe.integrations.oauth2.authorize
+    tokenUrl: /method/frappe.integrations.oauth2.get_token
+    scopes: 1
+  description: "This API uses OAuth 2 with the authorization code flow. \n[More info]https://frappe.io/docs/user/en/guides/integration/using_oauth)"
+  sources:
+  - openapi/openapi.yaml
