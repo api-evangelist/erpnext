@@ -34,6 +34,8 @@ apis:
       - type: OpenAPI
         url: https://github.com/alyf-de/frappe_api-docs
 common:
+  - type: AgenticAccess
+    url: agentic-access/erpnext-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/erpnext-vulnerability-disclosure.yml
   - type: DomainSecurity
