@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  description: 'Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.
+
+    '
+  version: 0.0.1
+  title: Frappe / ERPNext Method API
+  contact:
+    name: Raffael Meyer
+    url: https://alyf.de
+    email: raffael@alyf.de
+  license:
+    name: GPL-3.0
+servers:
+- url: https://demo.erpnext.com/api
+  description: Demo server
+- url: https://{company}.erpnext.com/api
+  description: Custom ERPNext.com instance
+  variables:
+    company:
+      default: demo
+      description: Subdomain of your company's custom ERPNext instance
+tags:
+- name: Method
+paths:
+  /method/version:
+    get:
+      summary: Get the version of the app
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 10.1.36
+      tags:
+      - Method
+components:
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Get your API keys at User -> Api Access -> Generate Keys.
+
+        "headers = {''Authorization'': ''token <api_key>:<api_secret>''}"
+
+        '
+    basicAuth:
+      type: http
+      description: 'Get your API keys at User -> Api Access -> Generate Keys.
+
+        username = api_key; password = api_secret
+
+        [More info](https://frappe.io/docs/user/en/guides/integration/token_based_auth)
+
+        '
+      scheme: basic
+    oAuth2:
+      type: oauth2
+      description: "This API uses OAuth 2 with the authorization code flow. \n[More info]https://frappe.io/docs/user/en/guides/integration/using_oauth)\n"
+      flows:
+        authorizationCode:
+          authorizationUrl: /method/frappe.integrations.oauth2.authorize
+          tokenUrl: /method/frappe.integrations.oauth2.get_token
+          refreshUrl: /method/frappe.integrations.oauth2.get_token
+          scopes:
+            all: Same permissions as the user who created the oAuth client

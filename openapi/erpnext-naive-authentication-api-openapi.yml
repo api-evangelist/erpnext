@@ -1,0 +1,175 @@
+openapi: 3.0.0
+info:
+  description: 'Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.
+
+    '
+  version: 0.0.1
+  title: Frappe / ERPNext Method Naive Authentication API
+  contact:
+    name: Raffael Meyer
+    url: https://alyf.de
+    email: raffael@alyf.de
+  license:
+    name: GPL-3.0
+servers:
+- url: https://demo.erpnext.com/api
+  description: Demo server
+- url: https://{company}.erpnext.com/api
+  description: Custom ERPNext.com instance
+  variables:
+    company:
+      default: demo
+      description: Subdomain of your company's custom ERPNext instance
+tags:
+- name: Naive Authentication
+  description: If you are developing something serious, you may want to use oAuth2.
+paths:
+  /method/login:
+    post:
+      tags:
+      - Naive Authentication
+      summary: Authenticate yourself
+      operationId: login
+      parameters:
+      - in: query
+        name: usr
+        schema:
+          type: string
+          example: Administrator
+        required: false
+        description: Your username
+      - in: query
+        name: pwd
+        schema:
+          type: string
+          example: admin
+        required: false
+        description: Your password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                usr:
+                  type: string
+                  example: Administrator
+                pwd:
+                  type: string
+                  example: admin
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  full_name:
+                    type: string
+                    example: Administrator
+                  message:
+                    type: string
+                    example: Logged in
+                  home_page:
+                    type: string
+                    example: /desk
+        '401':
+          description: oneOf(Incomplete login details, Incorrect password, User disabled or missing)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exc:
+                    type: string
+                    example: Traceback (most recent call last) ...
+                  message:
+                    type: string
+                    example: Incorrect password
+            text/html:
+              schema:
+                type: string
+  /method/logout:
+    get:
+      tags:
+      - Naive Authentication
+      summary: Logout from current session
+      responses:
+        '200':
+          description: Logged out.
+          content:
+            application/json:
+              schema:
+                type: object
+  /method/frappe.auth.get_logged_user:
+    get:
+      tags:
+      - Naive Authentication
+      summary: Get the user that is logged in
+      operationId: authGetLoggedUser
+      description: Get the currently logged in user
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: demo@erpnext.com
+        '401':
+          description: Not permitted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exc:
+                    type: string
+                    example: Traceback (most recent call last) ...
+                  _server_messages:
+                    type: string
+                    example: '[{"message": "Not permitted"}]'
+            text/html:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Get your API keys at User -> Api Access -> Generate Keys.
+
+        "headers = {''Authorization'': ''token <api_key>:<api_secret>''}"
+
+        '
+    basicAuth:
+      type: http
+      description: 'Get your API keys at User -> Api Access -> Generate Keys.
+
+        username = api_key; password = api_secret
+
+        [More info](https://frappe.io/docs/user/en/guides/integration/token_based_auth)
+
+        '
+      scheme: basic
+    oAuth2:
+      type: oauth2
+      description: "This API uses OAuth 2 with the authorization code flow. \n[More info]https://frappe.io/docs/user/en/guides/integration/using_oauth)\n"
+      flows:
+        authorizationCode:
+          authorizationUrl: /method/frappe.integrations.oauth2.authorize
+          tokenUrl: /method/frappe.integrations.oauth2.get_token
+          refreshUrl: /method/frappe.integrations.oauth2.get_token
+          scopes:
+            all: Same permissions as the user who created the oAuth client
