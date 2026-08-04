@@ -1,0 +1,18 @@
+{
+  "provider": "erpnext",
+  "sources": [
+    "erpnext-method-api-openapi.yml",
+    "erpnext-naive-authentication-api-openapi.yml",
+    "erpnext-resource-api-openapi.yml"
+  ],
+  "outputs": [
+    "erpnext-method-api-openapi.yml",
+    "erpnext-naive-authentication-api-openapi.yml",
+    "erpnext-resource-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
