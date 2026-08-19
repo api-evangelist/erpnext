@@ -1,0 +1,377 @@
+{
+  "item": [
+    {
+      "id": "fdd9b519-db16-4ae8-80ac-6c1fc7549b7c",
+      "name": "Naive Authentication",
+      "description": {
+        "content": "If you are developing something serious, you may want to use oAuth2.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b91a792-bd1b-4ccf-a517-b3c40f3524f8",
+          "name": "Authenticate yourself",
+          "request": {
+            "name": "Authenticate yourself",
+            "description": {},
+            "url": {
+              "path": [
+                "method",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "usr",
+                  "value": "<string>",
+                  "description": "Your username"
+                },
+                {
+                  "disabled": false,
+                  "key": "pwd",
+                  "value": "<string>",
+                  "description": "Your password"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "<object>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "234b6143-5852-4070-bad5-b1b83a800f44",
+              "name": "Login successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "usr",
+                      "value": "Administrator"
+                    },
+                    {
+                      "key": "pwd",
+                      "value": "admin"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "data",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"full_name\": \"Administrator\",\n  \"message\": \"Logged in\",\n  \"home_page\": \"/desk\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "860b51ef-3530-41b8-b5c1-be33f861f9a9",
+              "name": "oneOf(Incomplete login details, Incorrect password, User disabled or missing)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "usr",
+                      "value": "Administrator"
+                    },
+                    {
+                      "key": "pwd",
+                      "value": "admin"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "data",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"exc\": \"Traceback (most recent call last) ...\",\n  \"message\": \"Incorrect password\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa052e03-35b8-4d07-afe4-856b0e27fe8f",
+          "name": "Logout from current session",
+          "request": {
+            "name": "Logout from current session",
+            "description": {},
+            "url": {
+              "path": [
+                "method",
+                "logout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "497ae208-ecf7-4f5a-85d0-76fe16c098b3",
+              "name": "Logged out.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "logout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0baa41d8-424b-4d4c-b381-28004fd5091c",
+          "name": "Get the user that is logged in",
+          "request": {
+            "name": "Get the user that is logged in",
+            "description": {
+              "content": "Get the currently logged in user",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "method",
+                "frappe.auth.get_logged_user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e30732e-470d-4971-8c83-9e8a57988898",
+              "name": "search results matching criteria",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "frappe.auth.get_logged_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"demo@erpnext.com\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e07b6eb-d904-4bd8-9d42-720e1e850721",
+              "name": "Not permitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "frappe.auth.get_logged_user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"exc\": \"Traceback (most recent call last) ...\",\n  \"_server_messages\": \"[{\\\"message\\\": \\\"Not permitted\\\"}]\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://demo.erpnext.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d2c17736-bdd2-4ab1-a338-aa4c0a780908",
+    "name": "Frappe / ERPNext Method Naive Authentication API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.\n\n\nContact Support:\n Name: Raffael Meyer\n Email: raffael@alyf.de",
+      "type": "text/plain"
+    }
+  }
+}

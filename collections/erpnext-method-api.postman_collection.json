@@ -1,0 +1,101 @@
+{
+  "item": [
+    {
+      "id": "009a9f71-8ce8-49db-9945-11cd7e06f0dd",
+      "name": "Method",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c601d460-50ae-4a69-958e-435b985ecf54",
+          "name": "Get the version of the app",
+          "request": {
+            "name": "Get the version of the app",
+            "description": {},
+            "url": {
+              "path": [
+                "method",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b8d31d3-27f9-4e6e-9d96-47d358850ee4",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "method",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"10.1.36\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://demo.erpnext.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a4fd170b-3656-45c4-b4eb-f12f4dcbc8ec",
+    "name": "Frappe / ERPNext Method API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.\n\n\nContact Support:\n Name: Raffael Meyer\n Email: raffael@alyf.de",
+      "type": "text/plain"
+    }
+  }
+}

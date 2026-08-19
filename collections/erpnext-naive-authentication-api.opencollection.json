@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frappe / ERPNext Method Naive Authentication API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Naive Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Authenticate yourself",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.erpnext.com/api/method/login",
+            "params": [
+              {
+                "name": "usr",
+                "value": "",
+                "type": "query",
+                "description": "Your username"
+              },
+              {
+                "name": "pwd",
+                "value": "",
+                "type": "query",
+                "description": "Your password"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate yourself"
+        },
+        {
+          "info": {
+            "name": "Logout from current session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.erpnext.com/api/method/logout"
+          },
+          "docs": "Logout from current session"
+        },
+        {
+          "info": {
+            "name": "Get the user that is logged in",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.erpnext.com/api/method/frappe.auth.get_logged_user"
+          },
+          "docs": "Get the currently logged in user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

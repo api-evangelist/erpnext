@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frappe / ERPNext Method API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Method",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the version of the app",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.erpnext.com/api/method/version"
+          },
+          "docs": "Get the version of the app"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

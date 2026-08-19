@@ -1,0 +1,645 @@
+{
+  "item": [
+    {
+      "id": "92d76630-b051-49d6-8834-599874d38076",
+      "name": "Resource",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fdab0a9c-e448-4be1-855c-03ca64ee386a",
+          "name": "Create a new document",
+          "request": {
+            "name": "Create a new document",
+            "description": {},
+            "url": {
+              "path": [
+                "resource",
+                ":DocType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocType",
+                  "description": "(Required) The DocType you'd like to receive. For example, Customer.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "<object>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "68f4918f-003f-4ddb-b078-41ef3da093c3",
+              "name": "Document created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The DocType you'd like to receive. For example, Customer.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "data",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"name\": \"string\",\n    \"modified_by\": \"string\",\n    \"creation\": \"string\",\n    \"modified\": \"string\",\n    \"doctype\": \"string\",\n    \"owner\": \"string\",\n    \"docstatus\": 8742\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17abebe4-1010-4d37-ba85-911b6e24e9c1",
+              "name": "Insufficient Permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The DocType you'd like to receive. For example, Customer.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "data",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"exc\": \"Traceback (most recent call last) ...\",\n  \"_error_message\": \"Insufficient Permission for {DocType}\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a35e7f0-db3f-491c-b4cb-329232859bf6",
+          "name": "Get a list of documents",
+          "request": {
+            "name": "Get a list of documents",
+            "description": {
+              "content": "Returns a list of documents of the given type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":DocType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "name",
+                  "description": "By default, only the \"name\" field is included in the listing, to add more fields, \nyou can pass the fields param to GET request. For example, fields=[\"name\",\"country\"]\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "You can filter the listing using sql conditions by passing them as the filters GET param.\nEach condition is an array of the format, [{doctype}, {field}, {operator}, {value}].\nFor example, filters=[[\"Customer\", \"country\", \"=\", \"India\"]]\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "description": "You can filter the listing using sql conditions by passing them as the filters GET param.\nEach condition is an array of the format, [{doctype}, {field}, {operator}, {value}].\nFor example, filters=[[\"Customer\", \"country\", \"=\", \"India\"]]\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit_page_length",
+                  "value": "20",
+                  "description": "By default, all listings are returned paginated. With this parameter you can change the \npage size (how many items are teturned at once).\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit_start",
+                  "value": "0",
+                  "description": "To request successive pages, pass a multiple of your limit_page_length as limit_start. \nFor Example, to request the second page, pass limit_start as 20.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocType",
+                  "description": "(Required) The DocType you'd like to receive. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c897e833-1005-4734-b214-6342f39ce8c1",
+              "name": "Found requested DocType. By default, only the \"name\" field is included in the listing, \nto add more fields, you can pass the fields param to GET request.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "name"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "limit_page_length",
+                      "value": "20"
+                    },
+                    {
+                      "key": "limit_start",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The DocType you'd like to receive. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"name\": \"string\",\n      \"modified_by\": \"string\",\n      \"creation\": \"string\",\n      \"modified\": \"string\",\n      \"doctype\": \"string\",\n      \"owner\": \"string\",\n      \"docstatus\": 3589\n    },\n    {\n      \"name\": \"string\",\n      \"modified_by\": \"string\",\n      \"creation\": \"string\",\n      \"modified\": \"string\",\n      \"doctype\": \"string\",\n      \"owner\": \"string\",\n      \"docstatus\": 5658\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46ee0a46-86be-431a-acab-78d4deb911d5",
+          "name": "Get a specific document",
+          "request": {
+            "name": "Get a specific document",
+            "description": {
+              "content": "Get a document by it's name, for example EMP001 of DocType Employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":DocType",
+                ":DocumentName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocType",
+                  "description": "(Required) The DocType you'd like to receive. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocumentName",
+                  "description": "(Required) The name (ID) of the document you'd like to receive. For example EMP001 (of type Employee).\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d0582b4-8f6a-4435-8d16-9bfc325b83af",
+              "name": "Found requested document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType",
+                    ":DocumentName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The DocType you'd like to receive. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocumentName",
+                      "description": "(Required) The name (ID) of the document you'd like to receive. For example EMP001 (of type Employee).\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"name\": \"string\",\n    \"modified_by\": \"string\",\n    \"creation\": \"string\",\n    \"modified\": \"string\",\n    \"doctype\": \"string\",\n    \"owner\": \"string\",\n    \"docstatus\": 8742\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b4d6ad6-dbfe-4f03-90c0-1bc3001a6fea",
+          "name": "Update a specific document",
+          "request": {
+            "name": "Update a specific document",
+            "description": {
+              "content": "TBD",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":DocType",
+                ":DocumentName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocType",
+                  "description": "(Required) The DocType you'd like to update. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocumentName",
+                  "description": "(Required) The name (ID) of the document you'd like to update. For example EMP001 (of type Employee).\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd5d72a4-82af-4638-825e-efd77cd007b2",
+              "name": "Updated specified document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType",
+                    ":DocumentName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The DocType you'd like to update. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocumentName",
+                      "description": "(Required) The name (ID) of the document you'd like to update. For example EMP001 (of type Employee).\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"name\": \"string\",\n    \"modified_by\": \"string\",\n    \"creation\": \"string\",\n    \"modified\": \"string\",\n    \"doctype\": \"string\",\n    \"owner\": \"string\",\n    \"docstatus\": 8742\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3523d983-c7dc-4350-a743-ae67f6c920cc",
+          "name": "Delete a specific document",
+          "request": {
+            "name": "Delete a specific document",
+            "description": {
+              "content": "TBD",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":DocType",
+                ":DocumentName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocType",
+                  "description": "(Required) The type of the document you'd like to delete. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DocumentName",
+                  "description": "(Required) The name (ID) of the document you'd like to delete. For example EMP001 (of type Employee).\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f04f98f-fb91-4986-a60c-6805cd2288dc",
+              "name": "Deleted specified document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":DocType",
+                    ":DocumentName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocType",
+                      "description": "(Required) The type of the document you'd like to delete. For example Customer, Supplier, \nEmployee, Account, Lead, Company, Sales Invoice, Purchase Invoice, Stock Entry, etc.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DocumentName",
+                      "description": "(Required) The name (ID) of the document you'd like to delete. For example EMP001 (of type Employee).\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://demo.erpnext.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8594cc48-9251-4d7d-b5eb-bd20f0d7b4c5",
+    "name": "Frappe / ERPNext Method Resource API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.\n\n\nContact Support:\n Name: Raffael Meyer\n Email: raffael@alyf.de",
+      "type": "text/plain"
+    }
+  }
+}
