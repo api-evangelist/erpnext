@@ -29,6 +29,16 @@ tags:
   - Sales
   - CRM
   - HR
+  - Open-Source
+tags_raw:
+  - ERP
+  - Enterprise Resource Planning
+  - Accounting
+  - Inventory
+  - Manufacturing
+  - Sales
+  - CRM
+  - HR
   - Open Source
 apis:
 - aid: erpnext:erpnext-method-api
