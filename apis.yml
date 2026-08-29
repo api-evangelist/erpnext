@@ -1,6 +1,18 @@
 aid: erpnext
 name: ERPNext
 description: ERPNext is a free and open-source enterprise resource planning (ERP) platform built on the Frappe Framework. It provides a comprehensive REST API for managing accounting, inventory, manufacturing, sales, purchase, HR, and CRM modules. The Frappe Framework auto-generates RESTful endpoints for all DocTypes, supporting standard HTTP methods with JSON responses, token-based authentication, OAuth2, and flexible filtering and pagination.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
