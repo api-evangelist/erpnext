@@ -35,13 +35,12 @@ specificationVersion: '0.23'
 type: Index
 tags:
   - ERP
-  - Enterprise Resource Planning
   - Accounting
   - Inventory
   - Manufacturing
   - Sales
   - CRM
-  - HR
+  - Human Resources
   - Open-Source
 tags_raw:
   - ERP
