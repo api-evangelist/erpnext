@@ -1,10 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: 'Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.
-
-    '
+  description: Unofficial documentation of the Frappe / ERPNext API.
   version: 0.0.1
-  title: Frappe / ERPNext Method Resource API
+  title: Frappe / ERPNext Resource API
   contact:
     name: Raffael Meyer
     url: https://alyf.de
@@ -75,6 +73,8 @@ paths:
                 type: string
       tags:
       - Resource
+      operationId: postResourceByDocType
+      x-operation-id-source: derived
     get:
       summary: Get a list of documents
       description: Returns a list of documents of the given type
@@ -130,6 +130,8 @@ paths:
                 $ref: '#/components/schemas/DocList'
       tags:
       - Resource
+      operationId: getResourceByDocType
+      x-operation-id-source: derived
   /resource/{DocType}/{DocumentName}:
     get:
       summary: Get a specific document
@@ -161,6 +163,8 @@ paths:
                     $ref: '#/components/schemas/DocType'
       tags:
       - Resource
+      operationId: getResourceByDocTypeByDocumentName
+      x-operation-id-source: derived
     put:
       summary: Update a specific document
       description: TBD
@@ -191,6 +195,8 @@ paths:
                     $ref: '#/components/schemas/DocType'
       tags:
       - Resource
+      operationId: putResourceByDocTypeByDocumentName
+      x-operation-id-source: derived
     delete:
       summary: Delete a specific document
       description: TBD
@@ -221,6 +227,8 @@ paths:
                     type: string
       tags:
       - Resource
+      operationId: deleteResourceByDocTypeByDocumentName
+      x-operation-id-source: derived
 components:
   schemas:
     DocList:

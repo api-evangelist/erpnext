@@ -1,8 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: 'Unofficial documentation of the [Frappe](https://frappe.io) / [ERPNext](https://erpnext.org) API.
-
-    '
+  description: Unofficial documentation of the Frappe / ERPNext API.
   version: 0.0.1
   title: Frappe / ERPNext Method API
   contact:
@@ -39,6 +37,8 @@ paths:
                     example: 10.1.36
       tags:
       - Method
+      operationId: getMethodVersion
+      x-operation-id-source: derived
 components:
   securitySchemes:
     tokenAuth:

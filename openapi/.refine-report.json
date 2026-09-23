@@ -1,9 +1,7 @@
 {
   "provider": "erpnext",
   "sources": [
-    "erpnext-method-api-openapi.yml",
-    "erpnext-naive-authentication-api-openapi.yml",
-    "erpnext-resource-api-openapi.yml"
+    "_original/openapi.yaml"
   ],
   "outputs": [
     "erpnext-method-api-openapi.yml",
@@ -13,6 +11,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "openapi.yaml: tagged paths GET /method/version -> Method",
+    "openapi.yaml: tagged paths POST /resource/{DocType} -> Resource",
+    "openapi.yaml: tagged paths GET /resource/{DocType} -> Resource",
+    "openapi.yaml: tagged paths GET /resource/{DocType}/{DocumentName} -> Resource",
+    "openapi.yaml: tagged paths PUT /resource/{DocType}/{DocumentName} -> Resource",
+    "openapi.yaml: tagged paths DELETE /resource/{DocType}/{DocumentName} -> Resource",
+    "openapi.yaml: declared missing tag: Method",
+    "openapi.yaml: declared missing tag: Resource",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "erpnext-method-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "erpnext-naive-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "erpnext-resource-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
