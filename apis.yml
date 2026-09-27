@@ -41,7 +41,7 @@ tags:
   - Sales
   - CRM
   - Human Resources
-  - Open-Source
+  - Open Source
 tags_raw:
   - ERP
   - Enterprise Resource Planning
@@ -52,6 +52,7 @@ tags_raw:
   - CRM
   - HR
   - Open Source
+  - Open-Source
 apis:
 - aid: erpnext:erpnext-method-api
   name: ERPNext Method API
