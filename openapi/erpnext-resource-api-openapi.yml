@@ -231,13 +231,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DocList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocType'
     DocType:
       type: object
       properties:
@@ -255,6 +248,13 @@ components:
           type: string
         docstatus:
           type: integer
+    DocList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocType'
   securitySchemes:
     tokenAuth:
       type: apiKey
