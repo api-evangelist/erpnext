@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: ERPNext Rate Limits
 description: ERPNext (via Frappe Framework) does not publish explicit API rate limits in its official documentation. Rate limiting behavior depends on the hosting environment and server configuration. Self-hosted instances have no enforced API rate limits by default.
 url: https://docs.frappe.io/framework/user/en/api/rest

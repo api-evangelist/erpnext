@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: ERPNext Plans and Pricing
 description: ERPNext is free and open-source software (AGPL-3.0). Hosting is available through Frappe Cloud with several tiers. The software itself has no per-user fees, no module charges, and no feature paywalls.
 url: https://frappe.io/erpnext/pricing
@@ -55,3 +59,27 @@ notes:
   - No API-specific pricing tiers
   - Product Warranty covers bug fixes and support tickets
   - 200+ certified implementation partners available
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Sites (Shared Hosting)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Servers (Standard)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Premium Servers
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
